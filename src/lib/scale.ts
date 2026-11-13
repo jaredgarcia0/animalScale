@@ -5,3 +5,7 @@ export function calculatePercentageError(actualMeters: number, guessMeters: numb
 
   return Math.abs((guessMeters - actualMeters) / actualMeters) * 100;
 }
+
+export function calculateRoundScore(percentageError: number): number {
+  return Math.max(0, Math.round(100 - percentageError));
+}
